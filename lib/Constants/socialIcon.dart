@@ -24,7 +24,7 @@ class socialIcon extends StatelessWidget {
             ),
             shape: BoxShape.circle,
           ),
-          child: SvgPicture.asset('images/icons/facebook.svg',height: 20.0,width: 20,)
+          child: SvgPicture.asset(iconSrc,height: 20.0,width: 20,)
       ),
     );
   }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pantofitpremiumapp/View/home_view.dart';
 import 'package:pantofitpremiumapp/View/login_view.dart';
+import 'package:pantofitpremiumapp/View/map_view.dart';
+import 'package:pantofitpremiumapp/View/profile_view.dart';
+import 'package:pantofitpremiumapp/View/registration_view.dart';
 import 'package:pantofitpremiumapp/View/welcome_view.dart';
 
 void main() {
@@ -31,6 +34,9 @@ class MainPage extends StatelessWidget {
         WelcomeView.id: (context) => WelcomeView(),
         HomeView.id: (context) => HomeView(),
         LoginView.id: (context) => LoginView(),
+        RegistrationView.id: (context)=> RegistrationView(),
+        MapView.id: (context)=>MapView(),
+        ProfileView.id: (context)=>ProfileView(),
       },
 
     );;
