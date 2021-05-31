@@ -23,7 +23,7 @@ class _RegistrationViewState extends State<RegistrationView> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFF),
+      backgroundColor: Color(0xFF0E0F10),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
@@ -36,7 +36,7 @@ class _RegistrationViewState extends State<RegistrationView> {
               ),
               Container(
                 height: size.height*0.10,
-                child: Image.asset('images/logo.png'),
+                child: Hero(tag:'logo',child: Image.asset('images/logo.png')),
               ),
               SizedBox(
                 height: size.height*0.10,

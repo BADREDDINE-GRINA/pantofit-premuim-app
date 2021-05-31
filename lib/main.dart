@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pantofitpremiumapp/View/home_view.dart';
 import 'package:pantofitpremiumapp/View/login_view.dart';
 import 'package:pantofitpremiumapp/View/map_view.dart';
+import 'package:pantofitpremiumapp/View/offres_view.dart';
 import 'package:pantofitpremiumapp/View/profile_view.dart';
+import 'package:pantofitpremiumapp/View/qrcode_view.dart';
 import 'package:pantofitpremiumapp/View/registration_view.dart';
+import 'package:pantofitpremiumapp/View/settings_view.dart';
+import 'package:pantofitpremiumapp/View/test_view.dart';
 import 'package:pantofitpremiumapp/View/welcome_view.dart';
 
 void main() {
@@ -37,6 +41,11 @@ class MainPage extends StatelessWidget {
         RegistrationView.id: (context)=> RegistrationView(),
         MapView.id: (context)=>MapView(),
         ProfileView.id: (context)=>ProfileView(),
+        QrCodeView.id: (context)=>QrCodeView(),
+        OffresView.id: (context)=>OffresView(),
+        SettingsView.id: (context)=> SettingsView(),
+        TestView.id:(context)=>TestView()
+
       },
 
     );;

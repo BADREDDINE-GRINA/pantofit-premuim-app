@@ -1,6 +1,15 @@
+
+import 'dart:ffi';
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:pantofitpremiumapp/Constants/kBuildGymCard.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pantofitpremiumapp/Constants/Utils.dart';
+import 'package:pantofitpremiumapp/widgets/kBuildBottomSheet.dart';
+
 
 
 
@@ -12,72 +21,42 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        title:Text('Modal')
-      ),
-      body:Column(
-        children: [
-          Text('dze'),
-          MaterialButton(
-            child: Text('salam'),
-              onPressed: (){
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        height: size.height*0.33,
-                        padding: EdgeInsets.symmetric(vertical: 15,horizontal: 30),
-                        decoration: BoxDecoration(
-                          color: Color(0xFF16191C),
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0),topRight: Radius.circular(40.0)),
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text('Salles à Proximité',),
-                                Expanded(child: SizedBox()),
-                                MaterialButton(
-                                    onPressed: null,
-                                    child: Container(
 
-                                      child: Icon(Icons.arrow_downward_sharp,color: Color(0xFF16191C),),
-                                      height:25,
-                                      width: 25,
-                                      decoration:BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(100)),
-                                        color: Color(0xFFD0D0D0),
-                                      ) ,
-                                    )
-                                ),
+      @override
+      Widget build(BuildContext context) {
+        Size size = MediaQuery.of(context).size;
+        return Scaffold(
+          body: buildLogOutButton(),
+        );
+      }
 
-                              ],
-                            ),
-                            Expanded(
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  buildGymCard(size,'images/partenaires/alphaform.svg','AlphaForm','à 400m'),
-                                  buildGymCard(size,'images/partenaires/progym.svg','AlphaForm','à 400m'),
-                                  buildGymCard(size,'images/partenaires/alphaform.svg','AlphaForm','à 400m'),
+      Align buildLogOutButton() {
+        return Align(
+          alignment: Alignment.bottomRight,
+          child: GestureDetector(
+            child: Container(
 
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    }
-                );
-              }
+              child:Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 20.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.logout),
+                    Text("Se Déconnecter",style: TextStyle(color: Colors.white,fontSize: 14,),),
+                  ],
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Color(0xFFc21e53),
+
+                borderRadius: BorderRadius.circular(7),
+              ),
+            ),
           ),
-        ],
+        );
+      }
+    }
 
-        ),
-      );
-  }
-}
+
+
+

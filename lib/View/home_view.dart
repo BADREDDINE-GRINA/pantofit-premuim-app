@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pantofitpremiumapp/View/map_view.dart';
+import 'package:pantofitpremiumapp/View/offres_view.dart';
 import 'package:pantofitpremiumapp/View/profile_view.dart';
+import 'package:pantofitpremiumapp/View/qrcode_view.dart';
+import 'package:pantofitpremiumapp/View/settings_view.dart';
 
 
 class HomeView extends StatefulWidget {
@@ -13,10 +16,10 @@ class _HomeViewState extends State<HomeView> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     MapView(),
+    OffresView(),
+    QrCodeView(),
     ProfileView(),
-    ProfileView(),
-    ProfileView(),
-    ProfileView(),
+    SettingsView(),
   ];
   void onTabTapped(int index) {
 

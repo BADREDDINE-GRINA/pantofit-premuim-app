@@ -21,7 +21,7 @@ class _LoginViewState extends State<LoginView> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       //resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xFF),
+      backgroundColor: Color(0xFF0e0f10),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
@@ -66,22 +66,25 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "Vous n'avez pas de compte?",style: kPrimaryText,
-                  ),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  GestureDetector(
-                    onTap: (){ Navigator.pushNamed(context, RegistrationView.id);},
-                    child: Text(
-                      "Registrez-vous",style: kPrimaryBoldText,
+              FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Vous n'avez pas de compte?",style: kPrimaryText,
                     ),
-                  )
-                ],
+                    SizedBox(
+                      width: 6,
+                    ),
+                    GestureDetector(
+                      onTap: (){ Navigator.pushNamed(context, RegistrationView.id);},
+                      child: Text(
+                        "Registrez-vous",style: kPrimaryBoldText,
+                      ),
+                    )
+                  ],
+                ),
               ),
               OrDivider(),
               Row(
