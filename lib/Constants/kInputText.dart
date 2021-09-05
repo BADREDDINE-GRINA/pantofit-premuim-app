@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-TextField kBuildTextField(String msg, Function onpress, TextInputType typeText) {
+TextField kBuildTextFormField(String msg, Function onpress, bool hide) {
   return TextField(
     onChanged: onpress,
-    keyboardType: typeText,
+    obscureText: hide,
     textAlign: TextAlign.center,
     decoration: InputDecoration(
       hintText: msg,
@@ -29,7 +29,7 @@ TextField kBuildTextField(String msg, Function onpress, TextInputType typeText) 
 
 Widget kBuildSemiTextField(String msg, Function onpress, TextInputType typeText) {
   return Expanded(
-    child: TextField(
+    child: TextFormField(
       onChanged: onpress,
       keyboardType: typeText,
       textAlign: TextAlign.center,

@@ -14,7 +14,7 @@ class _WelcomeViewState extends State<WelcomeView> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), ()=>Navigator.pushNamed(context, TestView.id));
+    Timer(Duration(seconds: 2), ()=>Navigator.pushNamed(context, TestView.id));
   }
   @override
   Widget build(BuildContext context) {

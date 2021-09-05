@@ -5,6 +5,8 @@ import 'package:pantofitpremiumapp/View/profile_view.dart';
 import 'package:pantofitpremiumapp/View/qrcode_view.dart';
 import 'package:pantofitpremiumapp/View/settings_view.dart';
 
+import 'login_view.dart';
+
 
 class HomeView extends StatefulWidget {
   static String id = "home_view";
@@ -27,6 +29,13 @@ class _HomeViewState extends State<HomeView> {
       _currentIndex = index;
 
     });
+  }
+  @override
+  void initState() {
+    super.initState();
+    if(LoginView.idClient==null){
+      Navigator.pushNamed(context, LoginView.id);
+    }
   }
   @override
   Widget build(BuildContext context) {

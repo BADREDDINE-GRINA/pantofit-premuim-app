@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PantoFit Premium',
+      debugShowCheckedModeBanner: false,
       home: MainPage(),
     );
   }
@@ -28,10 +29,14 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+
       theme: ThemeData.dark().copyWith(
         textTheme: TextTheme(
           body1: TextStyle(color: Colors.black54),
         ),
+        bottomSheetTheme: BottomSheetThemeData(
+          backgroundColor:Color.fromRGBO(22, 25, 28, 0),
+        )
       ),
       initialRoute: WelcomeView.id,
       routes: {

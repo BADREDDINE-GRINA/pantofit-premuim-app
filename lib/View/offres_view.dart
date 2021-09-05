@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pantofitpremiumapp/services/offres_service.dart';
 import 'package:pantofitpremiumapp/widgets/kListedesSallesWidget.dart';
 import 'package:pantofitpremiumapp/widgets/kOffresCard.dart';
 
@@ -28,10 +29,11 @@ class _OffresViewState extends State<OffresView> {
             padding: const EdgeInsets.only(left: 10,right:10),
             child: Center(child: Text("Ne payer que ce que vous allez consommer", textAlign:TextAlign.center, style: TextStyle(color: Colors.white,fontSize: 22,),)),
           ),
+
           Expanded(child: SizedBox(),flex: 1,),
-          kbuildCardOffers(size,'LEGER','299 dh','20 séances',false),
-          kbuildCardOffers(size,'STANDARD','549 dh','50 séances',true),
-          kbuildCardOffers(size,'PRO','799 dh','100 séances',false),
+          kbuildCardOffers(size,'LEGER',getMontantOffre(1),getNbrTicketOffre(1),false),
+          kbuildCardOffers(size,'STANDARD',getMontantOffre(2),getNbrTicketOffre(2),true),
+          kbuildCardOffers(size,'PRO',getMontantOffre(3),getNbrTicketOffre(3),false),
           Expanded(child: SizedBox(),flex: 2,),
           kListedesSallesWidget(),
         ],

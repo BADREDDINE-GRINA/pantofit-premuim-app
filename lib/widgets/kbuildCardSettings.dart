@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantofitpremiumapp/Constants/kPrimaryText.dart';
+import 'package:pantofitpremiumapp/View/login_view.dart';
 
 Card kbuildCardSettings(IconData icondata,String title) {
   return Card(
@@ -19,10 +20,11 @@ Card kbuildCardSettings(IconData icondata,String title) {
     ),
   );
 }
-Align kbuildLogOutButton() {
+Align kbuildLogOutButton(Function function) {
   return Align(
     alignment: Alignment.bottomRight,
     child: GestureDetector(
+      onTap: function,
       child: Container(
 
         child:Padding(

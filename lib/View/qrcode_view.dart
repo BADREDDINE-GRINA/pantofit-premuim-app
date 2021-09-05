@@ -44,7 +44,7 @@ class _QrCodeViewState extends State<QrCodeView> {
                 borderRadius: BorderRadius.all(Radius.circular(10))
               ),
               child: QrImage(
-                data: "1234567890",
+                data: "1102alphaform",
                 version: QrVersions.auto,
                 size: 250.0,
                 backgroundColor: Colors.black,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pantofitpremiumapp/Constants/kPrimaryText.dart';
+import 'package:pantofitpremiumapp/services/user_service.dart';
 import 'package:pantofitpremiumapp/widgets/kOffresCard.dart';
 import 'package:pantofitpremiumapp/widgets/kbuildCardSettings.dart';
+
+import 'login_view.dart';
 class SettingsView extends StatefulWidget {
   static String id="settings_view";
 
@@ -21,8 +24,9 @@ class _SettingsViewState extends State<SettingsView> {
             Expanded(flex:2,child: SizedBox()),
             Text("PARAMETRES",style: kPrimaryBoldText,),
             Expanded(child: SizedBox(),flex: 1,),
+            //creer une autre card
 
-            kbuildCardOffers(size, 'Solde', '7', 'Séances restantes', false),
+            kbuildCardOffers2(size,postNombreSeancesRestantes()),
 
             Padding(
               padding: EdgeInsets.only(left:size.width*0.075,right: size.width*0.075,top:10),
@@ -75,7 +79,12 @@ class _SettingsViewState extends State<SettingsView> {
                   kbuildCardSettings(Icons.keyboard_arrow_down, "Conditions d'utilisation"),
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0,bottom:20.0),
-                    child: kbuildLogOutButton(),
+                    child: kbuildLogOutButton(
+                          (){
+                            LoginView.idClient=null;
+                            Navigator.pushNamed(context, LoginView.id);
+                            },
+                    ),
                   ),
 
 
